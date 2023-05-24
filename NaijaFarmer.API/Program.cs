@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+using NaijaFarmer.API.Extensions;
+using NaijaFarmer.DATA.DataContext;
+using NaijaFarmer.Models.Entities;
+
 namespace NaijaFarmer.API
 {
     public class Program
@@ -9,6 +14,12 @@ namespace NaijaFarmer.API
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddDbConnection(builder.Configuration);
+
+            builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             var app = builder.Build();
 
