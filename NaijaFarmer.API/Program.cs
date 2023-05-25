@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using NaijaFarmer.API.ContextFactory;
 using NaijaFarmer.API.Extensions;
 using NaijaFarmer.DATA.DataContext;
 using NaijaFarmer.Models.Entities;
@@ -17,9 +18,7 @@ namespace NaijaFarmer.API
 
             builder.Services.AddDbConnection(builder.Configuration);
 
-            builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+            builder.Services.AddCustomIdentity();
 
             var app = builder.Build();
 
