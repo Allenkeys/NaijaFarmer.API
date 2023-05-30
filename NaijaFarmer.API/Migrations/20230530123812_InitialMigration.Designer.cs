@@ -12,8 +12,8 @@ using NaijaFarmer.DATA.DataContext;
 namespace NaijaFarmer.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230525153507_InitMigration")]
-    partial class InitMigration
+    [Migration("20230530123812_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

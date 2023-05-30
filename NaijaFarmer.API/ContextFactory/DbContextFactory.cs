@@ -1,7 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using NaijaFarmer.API.Extensions;
 using NaijaFarmer.DATA.DataContext;
 
 namespace NaijaFarmer.API.ContextFactory
@@ -14,7 +13,7 @@ namespace NaijaFarmer.API.ContextFactory
             var configuration = new SqlConnectionStringBuilder(
                 builderApp.Configuration.GetConnectionString("DefaultConn"));
 
-            // Use when connection string is saved in the appsettings
+            // Use this method, when the connection string is saved in the appsettings
             /*var configuration = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
                  .AddJsonFile("appsettings.json")
